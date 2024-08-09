@@ -23,56 +23,60 @@ Sebelum memulai instalasi Laravel 8, pastikan server atau mesin lokal Anda memen
 
 ### 1. Instalasi dan Setup Proyek Laravel Baru
 
-Untuk memulai proyek Laravel baru di desktop Anda, gunakan perintah berikut:
+Berikut adalah langkah-langkah untuk memulai proyek Laravel baru di desktop Anda:
 
-```bash
-# 1. Download dan instal Composer, jika belum terpasang
-curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+| Tahap | Perintah                                                      | Penjelasan                                                   |
+|-------|---------------------------------------------------------------|--------------------------------------------------------------|
+| 1     | `curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer` | Mengunduh dan menginstal Composer, jika belum terpasang.     |
+| 2     | `composer create-project --prefer-dist laravel/laravel nama-proyek-anda && cd nama-proyek-anda` | Membuat proyek Laravel baru dan masuk ke direktori proyek.    |
+| 3     | `sed -i 's/DB_DATABASE=laravel/DB_DATABASE=nama_database/' .env` | Mengganti nama database di file `.env`.                       |
+| 4     | `sed -i 's/DB_USERNAME=root/DB_USERNAME=user_database/' .env` | Mengganti username database di file `.env`.                   |
+| 5     | `sed -i 's/DB_PASSWORD=/DB_PASSWORD=password_database/' .env` | Mengganti password database di file `.env`.                   |
+| 6     | `php artisan migrate`                                         | Jalankan migrasi untuk membuat tabel di database.             |
+| 7     | `php artisan serve`                                           | Menjalankan server pengembangan Laravel.                      |
 
-# 2. Membuat proyek Laravel baru dan masuk ke direktori proyek
-composer create-project --prefer-dist laravel/laravel nama-proyek-anda && cd nama-proyek-anda
+Gantilah `nama-proyek-anda`, `nama_database`, `user_database`, dan `password_database` dengan pengaturan yang sesuai dengan konfigurasi Anda.
 
-# 3. Konfigurasi file .env sesuai dengan pengaturan database Anda
-sed -i 's/DB_DATABASE=laravel/DB_DATABASE=nama_database/' .env
-sed -i 's/DB_USERNAME=root/DB_USERNAME=user_database/' .env
-sed -i 's/DB_PASSWORD=/DB_PASSWORD=password_database/' .env
+### 2. Copy Paste Program dari Repository Orang Lain
 
-# 4. Jalankan migrasi untuk membuat tabel di database
-php artisan migrate
-
-# 5. Jalankan server pengembangan Laravel
-php artisan serve
-
-### 2. Instalasi dan Setup Proyek Laravel Baru
-
-Untuk memulai proyek Laravel baru di desktop Anda, gunakan perintah berikut:
-2. Copy Paste Program dari Repository Orang Lain
 Jika Anda ingin meng-copy program dari repository orang lain di GitHub dan menjalankannya di desktop Anda, ikuti langkah-langkah berikut:
 
-bash
-Salin kode
-# 1. Clone repository dari GitHub
-git clone https://github.com/username/repository.git
+| Tahap | Perintah                                                      | Penjelasan                                                   |
+|-------|---------------------------------------------------------------|--------------------------------------------------------------|
+| 1     | `git clone https://github.com/username/repository.git`         | Meng-clone repository dari GitHub ke mesin lokal Anda.       |
+| 2     | `cd repository`                                               | Masuk ke direktori proyek yang di-clone.                      |
+| 3     | `composer install`                                            | Menginstal semua dependensi yang diperlukan oleh Laravel.    |
+| 4     | `cp .env.example .env`                                        | Membuat file `.env` dari contoh yang disediakan.             |
+| 5     | `php artisan key:generate`                                    | Generate application key.                                    |
+| 6     | `sed -i 's/DB_DATABASE=laravel/DB_DATABASE=nama_database/' .env` | Mengganti nama database di file `.env`.                       |
+| 7     | `sed -i 's/DB_USERNAME=root/DB_USERNAME=user_database/' .env` | Mengganti username database di file `.env`.                   |
+| 8     | `sed -i 's/DB_PASSWORD=/DB_PASSWORD=password_database/' .env` | Mengganti password database di file `.env`.                   |
+| 9     | `php artisan migrate`                                         | Jalankan migrasi untuk membuat tabel di database.             |
+| 10    | `php artisan serve`                                           | Menjalankan server pengembangan Laravel.                      |
 
-# 2. Masuk ke direktori proyek
-cd repository
+Gantilah `username/repository`, `nama_database`, `user_database`, dan `password_database` sesuai dengan konfigurasi Anda dan repository yang diinginkan.
 
-# 3. Install semua dependensi yang diperlukan oleh Laravel
-composer install
+### 3. Akses Aplikasi
 
-# 4. Buat file .env dari contoh yang disediakan
-cp .env.example .env
+Setelah menjalankan perintah di atas, Anda dapat mengakses aplikasi Laravel di `http://localhost:8000`.
 
-# 5. Generate application key
-php artisan key:generate
+## Struktur Direktori Laravel
 
-# 6. Konfigurasi file .env sesuai dengan pengaturan database Anda
-sed -i 's/DB_DATABASE=laravel/DB_DATABASE=nama_database/' .env
-sed -i 's/DB_USERNAME=root/DB_USERNAME=user_database/' .env
-sed -i 's/DB_PASSWORD=/DB_PASSWORD=password_database/' .env
+Berikut adalah struktur direktori dasar dalam proyek Laravel:
 
-# 7. Jalankan migrasi untuk membuat tabel di database
-php artisan migrate
+| Direktori  | Penjelasan                                                                 |
+|------------|----------------------------------------------------------------------------|
+| `app/`     | Berisi kode aplikasi, termasuk model, controller, dan lainnya.             |
+| `bootstrap/`| Berisi file untuk bootstrapping framework.                                |
+| `config/`  | Berisi file konfigurasi untuk aplikasi.                                    |
+| `database/`| Berisi file migrasi, seeder, dan database.                                 |
+| `public/`  | Direktori root yang dapat diakses secara publik. Berisi file `index.php`.  |
+| `resources/`| Berisi view, bahasa, dan aset yang digunakan oleh aplikasi.               |
+| `routes/`  | Berisi file rute aplikasi.                                                 |
+| `storage/` | Berisi file log, cache, dan lainnya.                                       |
+| `tests/`   | Berisi tes unit dan fungsional.                                            |
+| `vendor/`  | Berisi dependensi pihak ketiga yang diinstal oleh Composer.                |
 
-# 8. Jalankan server pengembangan Laravel
-php artisan serve
+## Dokumentasi Resmi
+
+Untuk informasi lebih lanjut, Anda dapat merujuk ke [dokumentasi resmi Laravel](https://laravel.com/docs/8.x).
