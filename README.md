@@ -43,7 +43,7 @@ Jika Anda ingin meng-copy program dari repository orang lain di GitHub dan menja
 
 | Tahap | Perintah                                                      | Penjelasan                                                   |
 |-------|---------------------------------------------------------------|--------------------------------------------------------------|
-| 1     | `git clone https://github.com/username/repository.git`         | Meng-clone repository dari GitHub ke mesin lokal Anda.       |
+| 1     | `git clone https://github.com/MrsFaixall/ukk-perpus.git`        | Meng-clone repository dari GitHub ke mesin lokal Anda.       |
 | 2     | `cd repository`                                               | Masuk ke direktori proyek yang di-clone.                      |
 | 3     | `composer install`                                            | Menginstal semua dependensi yang diperlukan oleh Laravel.    |
 | 4     | `cp .env.example .env`                                        | Membuat file `.env` dari contoh yang disediakan.             |
