@@ -44,6 +44,7 @@ php artisan migrate
 php artisan serve
 
 
+```
 cara COPY ke stroges
 # 1. Clone repository dari GitHub
 git clone https://github.com/username/repository.git
