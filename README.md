@@ -44,8 +44,11 @@ php artisan migrate
 php artisan serve
 
 
-```
-cara COPY ke stroges
+2. Copy Paste Program dari Repository Orang Lain
+Jika Anda ingin meng-copy program dari repository orang lain di GitHub dan menjalankannya di desktop Anda, ikuti langkah-langkah berikut:
+
+bash
+Salin kode
 # 1. Clone repository dari GitHub
 git clone https://github.com/username/repository.git
 
@@ -71,4 +74,3 @@ php artisan migrate
 
 # 8. Jalankan server pengembangan Laravel
 php artisan serve
-
