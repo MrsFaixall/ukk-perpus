@@ -67,6 +67,7 @@ Jika Anda ingin meng-copy program dari repository orang lain di GitHub dan menja
 | 10    | `php artisan serve`                                          | Menjalankan server pengembangan Laravel.                      |
 
 Gantilah `nama_database`, `user_database`, dan `password_database` sesuai dengan konfigurasi Anda.
+Jika Terdapat Error Seperti ini:
 
 | **Error**                                                                                                                                                   | **Penyebab**                                                                                                       | **Solusi**                                                                                                                  |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
