@@ -43,7 +43,9 @@ php artisan migrate
 # 5. Jalankan server pengembangan Laravel
 php artisan serve
 
+### 2. Instalasi dan Setup Proyek Laravel Baru
 
+Untuk memulai proyek Laravel baru di desktop Anda, gunakan perintah berikut:
 2. Copy Paste Program dari Repository Orang Lain
 Jika Anda ingin meng-copy program dari repository orang lain di GitHub dan menjalankannya di desktop Anda, ikuti langkah-langkah berikut:
 
